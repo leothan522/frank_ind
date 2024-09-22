@@ -8,13 +8,19 @@
                     <a href="{{ route('web.index') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
+                    {{ config('app.name') }}
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard.dashboard') }}" :active="request()->routeIs('dashboard.dashboard')">
-                        Dashboard
+                    <x-nav-link href="{{ route('web.home') }}" :active="request()->routeIs('dashboard.dashboard')">
+                        Inicio
                     </x-nav-link>
+                    @if(auth()->user()->role)
+                        <x-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.dashboard')">
+                            Dashboard
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -116,7 +122,7 @@
 
                                 <x-dropdown-link href="{{ route('logout') }}"
                                          @click.prevent="$root.submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('adminlte::adminlte.log_out') }}
                                 </x-dropdown-link>
                             </form>
                         </x-slot>
@@ -139,7 +145,7 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard.dashboard') }}" :active="request()->routeIs('dashboard.dashboard')">
+            <x-responsive-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.dashboard')">
                 Dashboard
             </x-responsive-nav-link>
         </div>

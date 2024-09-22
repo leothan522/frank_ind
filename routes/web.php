@@ -13,6 +13,12 @@ Route::middleware('auth')->get('perfil', function (){
     return view('profile.show_default');
 })->name('web.perfil');
 
+Route::middleware(['auth', 'verified'])->prefix('web')->group(function (){
+
+    Route::get('/{rowquid?}', [WebController::class, 'index'])->name('web.home');
+
+});
+
 Route::get('recuperar/{token}/{email}', [WebController::class, 'recuperar'])->name('web.recuperar');
 Route::post('reset', [WebController::class, 'reset'])->name('web.reset');
 

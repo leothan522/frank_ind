@@ -14,6 +14,17 @@ class WebController extends Controller
 {
     use LivewireAlert;
 
+    public function index($rowquid = null)
+    {
+        $user = \Auth::user();
+        $userRole = $user->role;
+
+        if ($userRole && is_null($rowquid)){
+            return redirect()->route('dashboard.index');
+        }
+        return view('web.index');
+    }
+
     public function recuperar($token, $email)
     {
         return view('web.reset-password')

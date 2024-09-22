@@ -801,13 +801,15 @@
     @if (Route::has('login'))
         <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
             @auth
-                <a href="{{ route('web.perfil') }}"
-                   class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __('Profile') }}</a>
+                <a href="{{ url('/web') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Inicio</a>
+                <a href="{{ route('web.perfil') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __('Profile') }}</a>
                 {{--<a href="{{ route('chat.directo') }}"
                    class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                    target="_blank">Chat Directo</a>--}}
-                <a href="{{ url('/dashboard') }}"
-                   class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                @if(auth()->user()->role)
+                    <a href="{{ url('/dashboard') }}"
+                       class="ml-4 font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                @endif
             @else
                 <a href="{{ route('login') }}"
                    class="font-semibold text-gray-600 hover:text-gray-900 focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 mr-2">{{ __('Log in') }}</a>
@@ -1393,13 +1395,13 @@ MDI0LTAyLTExVDE2OjMwOjAwKzAxOjAwYK4uogAAAABJRU5ErkJggg==" />
             </div>
 
             <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                {{ mb_strtoupper(env('APP_NAME', 'Laravel')) }}
+                Instituto Nacional de Deportes
             </div>
         </div>
 
         <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-center">
             <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                Registro Nacional de Promotores Deportivos
             </div>
         </div>
 
