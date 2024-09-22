@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('estados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->text('rowquid');
             $table->timestamps();
         });
 
@@ -23,6 +24,7 @@ return new class extends Migration
                 ->insert([
                     "id" => $estado['id'],
                     "nombre" => $estado['nombre'],
+                    "rowquid" => generarStringAleatorio(16),
                     "created_at" => \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now(),
                 ]);

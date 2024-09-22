@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('municipios_id')->unsigned();
             $table->string('nombre');
+            $table->text('rowquid');
             $table->foreign('municipios_id')->references('id')->on('municipios')->cascadeOnDelete();
             $table->timestamps();
         });
@@ -26,6 +27,7 @@ return new class extends Migration
                     "id" => $estado['id'],
                     "municipios_id" => $estado['municipios_id'],
                     "nombre" => $estado['nombre'],
+                    "rowquid" => generarStringAleatorio(16),
                     "created_at" => \Carbon\Carbon::now(),
                     "updated_at" => \Carbon\Carbon::now(),
                 ]);

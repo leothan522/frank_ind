@@ -11,7 +11,7 @@ class Municipio extends Model
 {
     use HasFactory;
     protected $table = "municipios";
-    protected $fillable = ['id', 'estados_id', 'nombre'];
+    protected $fillable = ['id', 'estados_id', 'nombre', 'rowquid'];
 
     public function estado(): BelongsTo
     {

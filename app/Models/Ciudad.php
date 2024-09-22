@@ -10,7 +10,7 @@ class Ciudad extends Model
 {
     use HasFactory;
     protected $table = "ciudades";
-    protected $fillable = ['id', 'estados_id', 'nombre', 'capital'];
+    protected $fillable = ['id', 'estados_id', 'nombre', 'capital', 'rowquid'];
 
     public function estado(): BelongsTo
     {

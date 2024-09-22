@@ -10,7 +10,7 @@ class Parroquia extends Model
 {
     use HasFactory;
     protected $table = "parroquias";
-    protected $fillable = ['id', 'municipios_id', 'nombre'];
+    protected $fillable = ['id', 'municipios_id', 'nombre', 'rowquid'];
 
     public function municipio(): BelongsTo
     {

@@ -10,7 +10,7 @@ class Estado extends Model
 {
     use HasFactory;
     protected $table = "estados";
-    protected $fillable = ['id', 'nombre'];
+    protected $fillable = ['id', 'nombre', 'rowquid'];
 
     public function municipios(): HasMany
     {

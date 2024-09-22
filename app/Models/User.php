@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
@@ -118,6 +119,16 @@ class User extends Authenticatable implements MustVerifyEmail
     public function fcm(): HasMany
     {
         return $this->hasMany(Fcm::class, 'users_id', 'id');
+    }
+
+    public function promotor(): HasOne
+    {
+        return $this->hasOne(Promotor::class, 'users_id', 'id');
+    }
+
+    public function localizacion(): HasOne
+    {
+        return $this->hasOne(Localizacion::class, 'users_id', 'id');
     }
 
 }
