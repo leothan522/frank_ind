@@ -23,7 +23,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="far fa-bookmark"></i></span>
                     </div>
-                    <input type="text" class="form-control" wire:model="nombre" placeholder="Nombre">
+                    <input type="text" class="form-control" {{--wire:model="nombre"--}} placeholder="Nombre">
                     @error('nombre')
                     <span class="col-sm-12 text-sm text-bold text-danger">
                         <i class="icon fas fa-exclamation-triangle"></i>

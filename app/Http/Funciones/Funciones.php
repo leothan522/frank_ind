@@ -419,5 +419,25 @@ function getDataSelect2($rows, $text, $id = "rowquid"): array
     return $data;
 }
 
+/***************************************************************************************/
+
+function listarNivelesAcademicos($nivel = null): array|string
+{
+    $niveles = [
+        1 => 'Nivel Basico',
+        2 => 'Bachiller o Nivel Técnico Medio',
+        3 => 'Técnico Superior Universitario (TSU)',
+        4 => 'Universitario',
+        5 => 'Post grado',
+        6 => 'Autodidacta'
+    ];
+    if (is_null($nivel)){
+        $response = $niveles;
+    }else{
+        $response = $niveles[$nivel];
+    }
+    return $response;
+}
+
 
 

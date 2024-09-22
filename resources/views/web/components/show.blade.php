@@ -1,4 +1,4 @@
-<div class="card card-danger card-outline">
+<div class="card {{ $classPersonales }} card-outline">
     <div class="card-body">
         <h5 class="card-title">Datos Personales</h5>
 
@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<div class="card card-success card-outline">
+<div class="card {{ $classLocalizacion }} card-outline">
     <div class="card-body">
         <h5 class="card-title">Datos de Localización</h5>
 

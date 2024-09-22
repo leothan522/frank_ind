@@ -20,7 +20,7 @@ class Promotor extends Model
         'telefono_2',
         'estado_civil',
         'nivel_academico',
-        'profecional',
+        'profesional',
         'facebook',
         'instagram',
         'pagina_web',

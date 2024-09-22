@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('telefono_2')->nullable();
             $table->string('estado_civil');
             $table->string('nivel_academico');
-            $table->string('profecional');
+            $table->string('profesional');
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->text('pagina_web')->nullable();
