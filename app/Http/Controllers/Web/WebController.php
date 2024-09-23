@@ -47,7 +47,7 @@ class WebController extends Controller
         ];
 
         $pdf = Pdf::loadView('web._export.planilla', $data);
-        return $pdf->stream("Planilla_Promotor_{$datosPersonales->cedula}.pdf");
+        return $pdf->download("Planilla_Registro_{$datosPersonales->cedula}.pdf");
 
         return view('web._export.planilla')
             ->with('texto', $texto)

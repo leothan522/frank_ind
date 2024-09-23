@@ -18,3 +18,28 @@
     left: 15px;
     top: 15px;
 }
+
+.texto_titulo{
+    font-weight: bold;
+}
+
+.texto_subtitulo{
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .texto_titulo{
+
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .texto_titulo{
+        font-size: 48px;
+    }
+    .texto_subtitulo{
+        font-size: 24px;
+    }
+}
+
+

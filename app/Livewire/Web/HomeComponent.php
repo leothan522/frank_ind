@@ -20,7 +20,7 @@ class HomeComponent extends Component
 
     public $view = "show", $completo = false, $classPersonales = 'card-danger', $classLocalizacion = 'card-danger';
     public $prefijo = 'V-', $numero, $cedula, $nombres, $apellidos, $nacimiento, $sexo, $telefono_1, $telefono_2, $estado_civil,
-        $nivel_academico, $profesional, $facebook, $instagram, $pagina_web, $email;
+        $nivel_academico, $profesional = 'SI', $facebook, $instagram, $pagina_web, $email;
 
     public $estados_id, $municipios_id, $parroquias_id, $direccion, $acceso_internet, $dispositivo_electronico;
 
@@ -45,7 +45,7 @@ class HomeComponent extends Component
             $this->classLocalizacion = 'card-success';
         }
 
-        if ($this->promotores_id && $this->localizacion_id){
+        if (!is_null($this->promotores_id) && !is_null($this->localizacion_id)){
             $this->completo = true;
         }
 

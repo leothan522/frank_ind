@@ -187,7 +187,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            {{--<div class="form-group">
                 <label for="name">¿Eres Profesional?</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -205,7 +205,7 @@
                     </span>
                     @enderror
                 </div>
-            </div>
+            </div>--}}
 
             <div class="form-group">
                 <label for="name">Facebook:</label>
@@ -239,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            {{--<div class="form-group">
                 <label for="name">Pagína Web:</label>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
@@ -253,7 +253,7 @@
                     </span>
                     @enderror
                 </div>
-            </div>
+            </div>--}}
 
             <div class="form-group">
                 @if($promotores_id)

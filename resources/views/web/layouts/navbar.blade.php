@@ -1,8 +1,7 @@
 <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <img src="{{ asset('img/preloader_171x171.png') }}" alt="AdminLTE Logo"
-                 class="brand-image img-circle elevation-3" style="opacity: .8">
+            <img src="{{ asset('img/logo_ind.svg') }}" alt="Logo IND" class="brand-image" style="opacity: .8">
             <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
         </a>
 

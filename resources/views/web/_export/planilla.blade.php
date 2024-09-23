@@ -14,8 +14,11 @@
     </div>
 
     <div class="row">
-        <div class="col-12 text-right">
-            {!! qrCodeGenerate($texto) !!}
+        <div class="col-12">
+                <img src="{{ asset('img/logo_ind.svg') }}" width="100px;" alt="Logo IND">
+            <div class="float-right mr-3 mt-3">
+                {!! qrCodeGenerate($texto) !!}
+            </div>
         </div>
         <div class="col-12 text-center">
             <h4>Planilla de Registro</h4>
@@ -26,7 +29,7 @@
         <div class="col-11">
 
 
-            <div class="card card-navy">
+            <div class="card">
 
                 {{--<div class="card-header">
                     <h3 class="card-title"><b>Datos Personales</b></h3>
@@ -91,10 +94,10 @@
                         <label class="form-control text-uppercase">{{ listarNivelesAcademicos($promotor->nivel_academico) }}</label>
                     </div>
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <label for="name">¿Eres Profesional?</label>
                         <label class="form-control text-uppercase">{{ $promotor->profesional }}</label>
-                    </div>
+                    </div>--}}
 
                     <div class="form-group">
                         <label for="name">Facebook:</label>
@@ -106,12 +109,12 @@
                         <label class="form-control text-uppercase">{{ $promotor->instagram ?? '-' }}</label>
                     </div>
 
-                    <div class="form-group">
+                    {{--<div class="form-group">
                         <label for="name">Pagína Web:</label>
                         <label class="form-control text-uppercase">{{ $promotor->pagina_web ?? '-' }}</label>
-                    </div>
+                    </div>--}}
 
-                    <label><b>Datos de Localización</b></label>
+                    <label class="mt-3"><b>Datos de Localización</b></label>
 
                     <div class="form-group">
                         <label for="name">Estado:</label>

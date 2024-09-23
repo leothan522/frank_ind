@@ -65,7 +65,7 @@ return [
 
     'logo' => '<b>'.mb_strtoupper(env('APP_NAME', 'Laravel')).'</b>',
     /*'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',*/
-    'logo_img' => 'img/logo_small_50x50.png',
+    'logo_img' => 'img/logo_ind.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -115,7 +115,7 @@ return [
         'mode' => 'fullscreen',
         'img' => [
             /*'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',*/
-            'path' => 'img/preloader_171x171.png',
+            'path' => 'img/logo_ind_171x171.png',
             'alt' => '...',
             'effect' => 'animation__shake',
             'width' => 60,
