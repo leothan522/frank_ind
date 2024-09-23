@@ -85,7 +85,7 @@
                     </div>
 
                     <br>
-                    
+
                     <div class="form-group">
                         <label for="name">Nivel Academico:</label>
                         <label class="form-control text-uppercase">{{ listarNivelesAcademicos($promotor->nivel_academico) }}</label>
