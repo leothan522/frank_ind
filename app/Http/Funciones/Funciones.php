@@ -439,5 +439,10 @@ function listarNivelesAcademicos($nivel = null): array|string
     return $response;
 }
 
+function getEdad($fecha): int
+{
+    return Carbon::parse($fecha)->age;
+}
+
 
 

@@ -23,4 +23,9 @@ class Municipio extends Model
         return $this->hasMany(Parroquia::class, 'municipios_id', 'id');
     }
 
+    public function promotores(): HasMany
+    {
+        return $this->hasMany(Localizacion::class, 'municipios_id', 'id');
+    }
+
 }

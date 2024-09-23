@@ -16,6 +16,7 @@ Route::middleware('auth')->get('perfil', function (){
 Route::middleware(['auth', 'verified'])->prefix('web')->group(function (){
 
     Route::get('/{rowquid?}', [WebController::class, 'index'])->name('web.home');
+    Route::get('planilla/{rowquid}/descarga', [WebController::class, 'descargarPlanilla'])->name('web.planilla');
 
 });
 

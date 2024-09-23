@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RecuperarRequest;
+use App\Models\Localizacion;
+use App\Models\Promotor;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -23,6 +26,34 @@ class WebController extends Controller
             return redirect()->route('dashboard.index');
         }
         return view('web.index');
+    }
+
+    public function descargarPlanilla($rowquid)
+    {
+        $user = User::where('rowquid', $rowquid)->first();
+        if (!$user){
+            return redirect()->route('web.index');
+        }
+
+        $texto = route('web.planilla', $rowquid);
+        $datosPersonales = Promotor::where('users_id', $user->id)->first();
+        $datosLocalizacion = Localizacion::where('users_id', $user->id)->first();
+
+        $data = [
+            'texto' => $texto,
+            'user' => $user,
+            'promotor' => $datosPersonales,
+            'localizacion' => $datosLocalizacion
+        ];
+
+        $pdf = Pdf::loadView('web._export.planilla', $data);
+        return $pdf->stream("Planilla_Promotor_{$datosPersonales->cedula}.pdf");
+
+        return view('web._export.planilla')
+            ->with('texto', $texto)
+            ->with('user', $user)
+            ->with('promotor', $datosPersonales)
+            ->with('localizacion', $datosLocalizacion);
     }
 
     public function recuperar($token, $email)

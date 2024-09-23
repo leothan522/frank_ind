@@ -33,4 +33,19 @@ class Localizacion extends Model
         return $this->belongsTo(User::class, 'users_id', 'id');
     }
 
+    public function estado(): BelongsTo
+    {
+        return $this->belongsTo(Estado::class, 'estados_id', 'id');
+    }
+
+    public function municipio(): BelongsTo
+    {
+        return $this->belongsTo(Municipio::class, 'municipios_id', 'id');
+    }
+
+    public function parroquia(): BelongsTo
+    {
+        return $this->belongsTo(Parroquia::class, 'parroquias_id', 'id');
+    }
+
 }

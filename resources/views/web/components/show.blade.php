@@ -37,8 +37,8 @@
             Para descargar tu planilla de registro primero debes llenas todos los datos incluidos el las
             secciones <b>Datos personales</b> y <b>Datos de Localización</b>.
         </p>
-        <button type="button" class="btn btn-primary" wire:click="descargar" @if(!$completo) disabled @endif>
+        <a href="{{ route('web.planilla', auth()->user()->rowquid) }}" target="_blank" class="btn btn-primary" @if(!$completo) disabled @endif>
             <i class="fas fa-cloud-download-alt"></i> Descargar Planilla
-        </button>
+        </a>
     </div>
 </div>
