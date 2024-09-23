@@ -3,7 +3,7 @@
         <b>Version</b> 1.0
     </div>
     <span>
-        &copy; 2024 Instituto Nacional de Deportes
+        &copy; 2024 Instituto Nacional del Deporte
     </span>
     <span class="d-none d-md-inline">
         | Desarrollado por
