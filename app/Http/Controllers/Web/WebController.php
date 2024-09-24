@@ -47,13 +47,13 @@ class WebController extends Controller
         ];
 
         $pdf = Pdf::loadView('web._export.planilla', $data);
-        return $pdf->download("Planilla_Registro_{$datosPersonales->cedula}.pdf");
+        return $pdf->stream("Planilla_Registro_{$datosPersonales->cedula}.pdf");
 
-        return view('web._export.planilla')
+        /*return view('web._export.planilla')
             ->with('texto', $texto)
             ->with('user', $user)
             ->with('promotor', $datosPersonales)
-            ->with('localizacion', $datosLocalizacion);
+            ->with('localizacion', $datosLocalizacion);*/
     }
 
     public function recuperar($token, $email)

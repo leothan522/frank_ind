@@ -22,9 +22,14 @@ class Estado extends Model
         return $this->hasMany(Ciudad::class, 'estados_id', 'id');
     }
 
-    public function promotores(): HasMany
+    public function localizacion(): HasMany
     {
         return $this->hasMany(Localizacion::class, 'estados_id', 'id');
+    }
+
+    public function promotores(): HasMany
+    {
+        return $this->hasMany(Promotor::class, 'estados_id', 'id');
     }
 
 }

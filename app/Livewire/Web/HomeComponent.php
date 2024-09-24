@@ -95,6 +95,11 @@ class HomeComponent extends Component
         }else{
             //nuevo
             $promotor = new Promotor();
+            do{
+                $rowquid = generarStringAleatorio(16);
+                $existe = Promotor::where('rowquid', $rowquid)->first();
+            }while($existe);
+            $promotor->rowquid = $rowquid;
         }
 
         if ($promotor){
@@ -113,11 +118,12 @@ class HomeComponent extends Component
             $promotor->instagram = $this->instagram;
             $promotor->pagina_web = $this->pagina_web;
             $promotor->users_id = \Auth::id();
-            do{
-                $rowquid = generarStringAleatorio(16);
-                $existe = Promotor::where('rowquid', $rowquid)->first();
-            }while($existe);
-            $promotor->rowquid = $rowquid;
+
+            $locacion = Localizacion::where('users_id', \Auth::id())->first();
+            if ($locacion){
+                $promotor->estados_id = $locacion->estados_id;
+            }
+
             $promotor->save();
             $this->promotores_id = $promotor->id;
             $this->alert('success', 'Datos Guardados.');
@@ -155,6 +161,11 @@ class HomeComponent extends Component
         }else{
             //nuevo
             $localizacion = new Localizacion();
+            do{
+                $rowquid = generarStringAleatorio(16);
+                $existe = Localizacion::where('rowquid', $rowquid)->first();
+            }while($existe);
+            $localizacion->rowquid = $rowquid;
         }
 
         if ($localizacion){
@@ -166,12 +177,14 @@ class HomeComponent extends Component
             $localizacion->acceso_internet = $this->acceso_internet;
             $localizacion->dispositivo_electronico = $this->dispositivo_electronico;
             $localizacion->users_id = \Auth::id();
-            do{
-                $rowquid = generarStringAleatorio(16);
-                $existe = Localizacion::where('rowquid', $rowquid)->first();
-            }while($existe);
-            $localizacion->rowquid = $rowquid;
             $localizacion->save();
+
+            $promotor = Promotor::where('users_id', \Auth::id())->first();
+            if ($promotor){
+                $promotor->estados_id = $localizacion->estados_id;
+                $promotor->save();
+            }
+
             $this->localizacion_id = $localizacion->id;
             $this->alert('success', 'Datos Guardados.');
 

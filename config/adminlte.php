@@ -312,7 +312,12 @@ return [
         ],
 
         // Sidebar items:
-
+        [
+            'text' => 'Promotores',
+            'route' => 'dashboard.promotores',
+            'icon' => 'fas fa-fw fa-users',
+            'can' => 'promotores'
+        ],
         [
             'text'      => 'Configuración',
             'icon'      => 'fas fa-fw fa-cogs',

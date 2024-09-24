@@ -24,21 +24,31 @@ class Promotor extends Model
         'facebook',
         'instagram',
         'pagina_web',
+        'estados_id',
         'users_id',
         'rowquid'
     ];
 
-    public function scopeBuscar($query, $keyword)
+    public function scopeBuscar($query, $keyword, $filtro = null)
     {
-        return $query->where('cedula', 'LIKE', "%$keyword%")
-            ->orWhere('nombres', 'LIKE', "%$keyword%")
-            ->orWhere('apellidos', 'LIKE', "%$keyword%")
-            ;
+        if ($filtro) {
+            return $query->where('estados_id', $keyword);
+        }else{
+            return $query->where('cedula', 'LIKE', "%$keyword%")
+                ->orWhere('nombres', 'LIKE', "%$keyword%")
+                ->orWhere('apellidos', 'LIKE', "%$keyword%")
+                ;
+        }
     }
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'users_id', 'id');
+    }
+
+    public function estado(): BelongsTo
+    {
+        return $this->belongsTo(Estado::class, 'estados_id', 'id');
     }
 
 }
