@@ -6,7 +6,7 @@
     {{--<button type="button" class="btn btn-primary btn-block mb-3" wire:click="create">
         <i class="fas fa-file"></i> Nuevo Oficio
     </button>--}}
-    <a href="#" class="btn btn-primary btn-block mb-3" {{--wire:click="create"--}}>
+    <a href="{{ route('dashboard.promotores.excel') }}" target="_blank" class="btn btn-primary btn-block mb-3">
         <i class="fas fa-cloud-download-alt"></i> Descargar Excel
     </a>
 @endif

@@ -36,6 +36,7 @@ Route::middleware([UserPermisos::class])->group(function (){
     /* IND */
 
     Route::get('promotores', [PromotoresController::class, 'index'])->name('promotores');
+    Route::get('promotores/export', [PromotoresController::class, 'export'])->name('promotores.excel');
 
 });
 

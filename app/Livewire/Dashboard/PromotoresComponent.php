@@ -69,7 +69,7 @@ class PromotoresComponent extends Component
             'view',
             'cedula', 'nombres', 'apellidos', 'nacimiento', 'sexo', 'telefono_1', 'telefono_2', 'estado_civil', 'nivel_academico',
             'facebook', 'instagram', 'email', 'created_at',
-            'estado', 'municipio', 'parroquia', 'direccion', 'acceso_internet',
+            'estado', 'municipio', 'parroquia', 'direccion', 'acceso_internet', 'dispositivo_electronico', 'verLocalizacion',
             'rowquid',
         ]);
     }
