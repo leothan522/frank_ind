@@ -56,7 +56,7 @@
                     @foreach($promotores as $promotor)
                         <tr>
                             <td class="mailbox-name text-nowrap">
-                                <a class="link-dark" wire:click="show('hola')" style="cursor: pointer;">
+                                <a class="link-dark" wire:click="show('{{ $promotor->rowquid }}')" style="cursor: pointer;">
                                     {{ $promotor->cedula }}
                                 </a>
                             </td>

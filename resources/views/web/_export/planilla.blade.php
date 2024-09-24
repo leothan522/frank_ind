@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name">Correo Electronico:</label>
+                        <label for="name">Correo Electrónico:</label>
                         <label class="form-control text-lowercase">{{ $user->email }}</label>
                     </div>
 
@@ -90,7 +90,7 @@
                     <br>
 
                     <div class="form-group">
-                        <label for="name">Nivel Academico:</label>
+                        <label for="name">Nivel Académico:</label>
                         <label class="form-control text-uppercase">{{ listarNivelesAcademicos($promotor->nivel_academico) }}</label>
                     </div>
 
