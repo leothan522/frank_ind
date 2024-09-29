@@ -419,6 +419,12 @@ function getDataSelect2($rows, $text, $id = "rowquid"): array
     return $data;
 }
 
+function borrarQR(): void
+{
+    $path = public_path('storage');;
+    File::delete(File::glob($path.'/*.svg'));
+}
+
 /***************************************************************************************/
 
 function listarNivelesAcademicos($nivel = null): array|string
